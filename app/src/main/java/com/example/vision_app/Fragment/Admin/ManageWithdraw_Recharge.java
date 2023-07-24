@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.Admin;
+package com.example.vision_app.Fragment.Admin;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,12 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.vision_app.Adapter.RechargeAdapter;
+import com.example.vision_app.DAO.RechargeDao;
+import com.example.vision_app.Model.Recharge;
+import com.example.vision_app.R;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.RechargeAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.RechargeDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Recharge;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
+import java.util.ArrayList;
 
 public class ManageWithdraw_Recharge extends Fragment {
     RecyclerView rcv;
@@ -42,7 +42,6 @@ public class ManageWithdraw_Recharge extends Fragment {
 
     private void initView(View v) {
         rcv = v.findViewById(R.id.rcv_qldnt);
-
         dao = new RechargeDao(getContext());
         adapter = new RechargeAdapter(list,getContext());
     }

@@ -1,7 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.vision_app;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -21,6 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.vision_app.DAO.RechargeDao;
+import com.example.vision_app.DAO.UserDao;
+import com.example.vision_app.Model.Recharge;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -30,10 +33,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.RechargeDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.UserDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Recharge;
 
 public class ReachargeDetail extends AppCompatActivity {
     private TextView id,ten,tien,time,trangThai;

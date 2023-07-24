@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter;
+package com.example.vision_app.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +8,10 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.vision_app.Model.PhotoSliderCourse;
+import com.example.vision_app.R;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.PhotoSliderCourse;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
+import java.util.ArrayList;
 
 public class SliderCourseAdapter extends RecyclerView.Adapter<SliderCourseAdapter.PhotoViewHolder>{
     ArrayList<PhotoSliderCourse> listPhotos;

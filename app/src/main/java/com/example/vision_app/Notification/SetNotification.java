@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Notification;
+package com.example.vision_app.Notification;
 
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
@@ -11,7 +11,8 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
+import com.example.vision_app.R;
+
 
 public class SetNotification {
     private static final int NOTIFICATION_ID = 1;

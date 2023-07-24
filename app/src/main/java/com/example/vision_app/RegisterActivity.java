@@ -1,6 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.vision_app;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -10,15 +8,18 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.vision_app.DAO.UserDao;
+import com.example.vision_app.Date.MyDate;
+import com.example.vision_app.Model.User;
+import com.example.vision_app.Notification.SetNotification;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.UserDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Date.MyDate;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.User;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Notification.SetNotification;
+
 
 public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout til_userNew,til_passwordNew1,til_passwordNew2,til_nameNew,til_dateNew,til_nPhoneNew,til_addressNew;

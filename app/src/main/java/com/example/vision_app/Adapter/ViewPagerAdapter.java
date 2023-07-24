@@ -1,19 +1,18 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter;
+package com.example.vision_app.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.Admin.ManageOrder;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.Admin.ManageProduct;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.Admin.ManageWithdraw_Recharge;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.Admin.MyAdmin;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.User.HomeFragment;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.User.NewProduct;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.User.Person;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.User.Share;
-
+import com.example.vision_app.Fragment.Admin.ManageOrder;
+import com.example.vision_app.Fragment.Admin.ManageProduct;
+import com.example.vision_app.Fragment.Admin.ManageWithdraw_Recharge;
+import com.example.vision_app.Fragment.Admin.MyAdmin;
+import com.example.vision_app.Fragment.User.HomeFragment;
+import com.example.vision_app.Fragment.User.NewProduct;
+import com.example.vision_app.Fragment.User.Person;
+import com.example.vision_app.Fragment.User.Share;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     int role=0;

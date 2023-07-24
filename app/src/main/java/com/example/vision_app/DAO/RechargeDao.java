@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO;
+package com.example.vision_app.DAO;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,11 +7,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.vision_app.Helper.DBhelper;
+import com.example.vision_app.Model.Recharge;
+
 import java.util.ArrayList;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Helper.DBhelper;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Recharge;
-
 public class RechargeDao {
     SQLiteDatabase db;
     public RechargeDao(Context context) {

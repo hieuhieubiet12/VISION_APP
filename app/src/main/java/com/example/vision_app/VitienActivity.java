@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison;
+package com.example.vision_app;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -19,6 +19,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.vision_app.Adapter.RechargeAdapter;
+import com.example.vision_app.DAO.RechargeDao;
+import com.example.vision_app.DAO.UserDao;
+import com.example.vision_app.Model.Recharge;
+import com.example.vision_app.Notification.SetNotification;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -30,13 +35,6 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.RechargeAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.RechargeDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.UserDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Recharge;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Notification.SetNotification;
-
 public class VitienActivity extends AppCompatActivity{
     private FloatingActionButton btnMenuAdd,btnRecharge,btnWithdraw;
     private TextView tvSoduTK,tvHoTen_vi;

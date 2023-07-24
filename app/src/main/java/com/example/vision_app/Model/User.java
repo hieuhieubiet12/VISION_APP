@@ -1,6 +1,8 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model;
+package com.example.vision_app.Model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String user_name,name,password,n_phone,date,address;
     private byte[] avatar;
     private int point,role;

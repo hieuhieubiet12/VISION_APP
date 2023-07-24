@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO;
+package com.example.vision_app.DAO;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,10 +7,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.vision_app.Helper.DBhelper;
+import com.example.vision_app.Model.ProductType;
+
 import java.util.ArrayList;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Helper.DBhelper;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.ProductType;
 
 public class ProductTypeDao {
     private SQLiteDatabase db;
@@ -31,6 +32,7 @@ public class ProductTypeDao {
             cursor.moveToFirst();
             do{
                 ProductType obj = new ProductType();
+                obj.setId_type_product(cursor.getInt(cursor.getColumnIndex("id_type_product")));
                 obj.setName_typePro(cursor.getString(cursor.getColumnIndex("name_type_pro")));
                 obj.setImage_typePro(cursor.getBlob(cursor.getColumnIndex("image_type_pro")));
                 list.add(obj);
@@ -72,20 +74,11 @@ public class ProductTypeDao {
         }
     }
 
-    public void deleteProType(ProductType productType) {
+    public int deleteProType(int id) {
         /*
          * Xóa một ProductType khỏi cơ sở dữ liệu.
          * */
-        String whereClause = "name_type_pro = ?";
-        String[] whereArgs = {productType.getName_typePro()};
-
-        int rowsAffected = db.delete("product_type", whereClause, whereArgs);
-
-        if (rowsAffected > 0) {
-            Log.d("deleteProType", "ProductType deleted successfully");
-        } else {
-            Log.d("deleteProType", "Failed to delete ProductType");
-        }
+       return db.delete("product_type","id_type_product=?", new String[]{String.valueOf(id)});
     }
 
     @SuppressLint("Range")
@@ -100,6 +93,7 @@ public class ProductTypeDao {
         if (cursor.moveToFirst()) {
             do {
                 ProductType obj = new ProductType();
+                obj.setId_type_product(cursor.getInt(cursor.getColumnIndex("id_type_product")));
                 obj.setName_typePro(cursor.getString(cursor.getColumnIndex("name_type_pro")));
                 obj.setImage_typePro(cursor.getBlob(cursor.getColumnIndex("image_type_pro")));
                 list.add(obj);

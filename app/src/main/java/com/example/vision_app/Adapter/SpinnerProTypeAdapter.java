@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter;
+package com.example.vision_app.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.vision_app.Model.ProductType;
+import com.example.vision_app.R;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.ProductType;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
+import java.util.ArrayList;
 
 public class SpinnerProTypeAdapter extends BaseAdapter {
     Context mContext;

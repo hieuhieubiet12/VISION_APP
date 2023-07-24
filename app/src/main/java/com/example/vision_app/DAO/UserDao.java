@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO;
+package com.example.vision_app.DAO;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,15 +7,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.example.vision_app.Helper.DBhelper;
+import com.example.vision_app.Model.User;
+
 import java.util.ArrayList;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Helper.DBhelper;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.User;
-
 public class UserDao {
     SQLiteDatabase db;
 

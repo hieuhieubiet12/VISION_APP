@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter;
+package com.example.vision_app.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,13 +14,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.vision_app.DAO.UserDao;
+import com.example.vision_app.Model.Recharge;
+import com.example.vision_app.R;
+import com.example.vision_app.ReachargeDetail;
 
 import java.util.ArrayList;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.UserDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Recharge;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.ReachargeDetail;
 
 public class RechargeAdapter extends RecyclerView.Adapter<RechargeAdapter.RechargeViewHolder> {
     private UserDao userDao;
@@ -71,7 +70,7 @@ public class RechargeAdapter extends RecyclerView.Adapter<RechargeAdapter.Rechar
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context,ReachargeDetail.class);
+                Intent i = new Intent(context, ReachargeDetail.class);
                 Bundle b = new Bundle();
                 b.putInt("id_recharge_extra",recharge.getId_recharge());
                 Log.d("hhhhhhhh", "onClick: "+recharge.getId_recharge());

@@ -1,6 +1,8 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model;
+package com.example.vision_app.Model;
 
-public class ProductType {
+import java.io.Serializable;
+
+public class ProductType implements Serializable {
     private int id_type_product;
     private String name_typePro;
     private byte[] image_typePro;

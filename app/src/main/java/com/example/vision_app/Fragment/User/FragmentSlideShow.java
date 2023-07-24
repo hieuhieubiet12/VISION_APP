@@ -1,6 +1,11 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.User;
+package com.example.vision_app.Fragment.User;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,18 +14,11 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import com.example.vision_app.Adapter.SliderCourseAdapter;
+import com.example.vision_app.Model.PhotoSliderCourse;
+import com.example.vision_app.R;
 
 import java.util.ArrayList;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.SliderCourseAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.PhotoSliderCourse;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
-
 
 public class FragmentSlideShow extends Fragment {
     ViewPager2 viewPager2;
@@ -54,17 +52,18 @@ public class FragmentSlideShow extends Fragment {
         viewPager2.setClipToPadding(false);
         viewPager2.setClipChildren(false);
         CompositePageTransformer transformer = new CompositePageTransformer();
-        transformer.addTransformer(new MarginPageTransformer(40));
-        transformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float r = 1 - Math.abs(position);
-                page.setScaleY(0.85f + r* 0.15f);
-            }
-        });
+//        transformer.addTransformer(new MarginPageTransformer(40));
+//        transformer.addTransformer(new ViewPager2.PageTransformer() {
+//            @Override
+//            public void transformPage(@NonNull View page, float position) {
+//                float r = 1 - Math.abs(position);
+//                page.setScaleY(0.85f + r* 0.15f);
+//            }
+//        });
         viewPager2.setPageTransformer(transformer);
 
         listPhotos = getListPhotos();
+
         SliderCourseAdapter photoAdapter = new SliderCourseAdapter(listPhotos);
         viewPager2.setAdapter(photoAdapter);
 

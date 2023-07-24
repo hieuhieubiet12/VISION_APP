@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.Admin;
+package com.example.vision_app.Fragment.Admin;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -21,6 +21,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.vision_app.Adapter.ProTypeAdapter;
+import com.example.vision_app.Adapter.ProductAdapter;
+import com.example.vision_app.DAO.ProductDao;
+import com.example.vision_app.DAO.ProductTypeDao;
+import com.example.vision_app.Model.Product;
+import com.example.vision_app.Model.ProductType;
+import com.example.vision_app.Product_add;
+import com.example.vision_app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -30,15 +38,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.ProTypeAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.ProductAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.ProductDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.ProductTypeDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Product;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.ProductType;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Product_add;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
 
 public class ManageProduct extends Fragment {
     private FloatingActionButton btnMenuAdd,btnAddProType,btnAddProduct;
@@ -125,8 +124,8 @@ public class ManageProduct extends Fragment {
                         }
                         objProductType.setName_typePro(edNameProType.getText().toString().trim());
                         if(productTypeDao.insertProType(objProductType)>0){
+                            loadDataProType();
                             Toast.makeText(getContext(), "Thêm thành công sản phẩm"+objProductType.getName_typePro(), Toast.LENGTH_SHORT).show();
-
                         }else {
                             Toast.makeText(getContext(), "Thêm ko thành công", Toast.LENGTH_SHORT).show();
                         }
@@ -142,14 +141,15 @@ public class ManageProduct extends Fragment {
                 startActivity(intent);
             }
         });
-        ryc_ProType.getId();
-//        registerForContextMenu();
+
+
+
     }
 
     private void initView(View v) {
         btnMenuAdd = v.findViewById(R.id.btn_menu_add_pro);
         btnAddProType = v.findViewById(R.id.btn_Add_ProType);
-        btnAddProduct = v.findViewById(R.id.btn_Add_Product);
+        btnAddProduct = v.findViewById(R.id.btn_Add_Product_productAdd);
         ryc_ProType = v.findViewById(R.id.ryc_ProType_manageProduct);
         ryc_Product = v.findViewById(R.id.ryc_Product_manageProduct);
         alphaFloatingAction = AnimationUtils.loadAnimation(getContext(),R.anim.floating_alpha);
@@ -201,6 +201,8 @@ public class ManageProduct extends Fragment {
         ryc_ProType.setAdapter(proTypeAdapter);
     }
     public  void loadDataProduct(){
+
+
         listProduct = productDao.getAllProduct();
         productAdapter = new ProductAdapter(getContext(),listProduct);
         ryc_Product.setAdapter(productAdapter);

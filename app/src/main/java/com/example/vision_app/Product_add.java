@@ -1,8 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSpinner;
+package com.example.vision_app;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +13,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
+
+import com.example.vision_app.Adapter.SpinnerProTypeAdapter;
+import com.example.vision_app.DAO.ProductDao;
+import com.example.vision_app.DAO.ProductTypeDao;
+import com.example.vision_app.Model.Product;
+import com.example.vision_app.Model.ProductType;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -24,12 +29,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.SpinnerProTypeAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.ProductDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.ProductTypeDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Product;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.ProductType;
 
 public class Product_add extends AppCompatActivity {
     private TextInputLayout til_namePro,til_describePro;
@@ -45,7 +44,6 @@ public class Product_add extends AppCompatActivity {
     private ProductTypeDao proTypeDao;
     private ProductDao productDao;
     private int sl_Default = 0;
-    private byte[] anhResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +77,13 @@ public class Product_add extends AppCompatActivity {
                 tv_Sl.setText(String.valueOf(sl_Default));
             }
         });
+
         //spinner mã loại sp
         fillSpinner(spn_proType);
+        if(proTypeDao.getAllProType()==null){
+            Toast.makeText(this, "Chưa có loại sản phẩm nào!", Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        }
         int maLoai = getProType(spn_proType);
 
         //lấy ảnh ở trong thư viện điện thoại admin
@@ -94,15 +97,24 @@ public class Product_add extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+
+        //xet du lieuo cho doi tuong
+
         btn_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(checkTrong()){
                     return;
                 }else {
-//            Product(int idType, String name, double price, byte[] image, int quantity, String description)
-                    Double pricePro = Double.valueOf(ed_price.getText().toString());
-                    if(productDao.insertPro(new Product(maLoai,ed_namePro.getText().toString(),pricePro,anhResult,Integer.valueOf(tv_Sl.getText().toString()),ed_describPro.getText().toString()))>0){
+                    double price = Double.valueOf(ed_price.getText().toString());
+                    int quantity = Integer.valueOf(tv_Sl.getText().toString());
+                    product.setIdType(maLoai);
+                    product.setName(ed_namePro.getText().toString());
+                    product.setDescription(ed_describPro.getText().toString());
+                    product.setPrice(price);
+                    product.setQuantity(quantity);
+
+                    if(productDao.insertPro(product)>0){
                         Toast.makeText(Product_add.this, "Thêm sản phẩm thành công!", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(Product_add.this, "Thêm thất bại.", Toast.LENGTH_SHORT).show();
@@ -130,7 +142,7 @@ public class Product_add extends AppCompatActivity {
         btn_upSL = findViewById(R.id.btn_upSL_add);
         btn_back = findViewById(R.id.btn_back_addProduct);
         tv_Sl = findViewById(R.id.tv_Sl);
-        img_Product = findViewById(R.id.img_Product);
+        img_Product = findViewById(R.id.img_Product_Add);
         btn_Add = findViewById(R.id.btn_Add_Product);
         product = new Product();
         productType = new ProductType();
@@ -184,8 +196,7 @@ public class Product_add extends AppCompatActivity {
                     byteArrayOutputStream.write(buffer,0,bytesRead);
                 }
                 byte[] bytes = byteArrayOutputStream.toByteArray();
-//                product.setImage(bytes);
-                anhResult = bytes;
+                product.setImage(bytes);
                 inputStream.close();
                 byteArrayOutputStream.close();
             } catch (FileNotFoundException e) {

@@ -1,6 +1,8 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model;
+package com.example.vision_app.Model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int id;
     private int idType;
     private String name;

@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Fragment.User;
+package com.example.vision_app.Fragment.User;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,11 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Adapter.RechargeAdapter;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO.UserDao;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.LoginActivity;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.R;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.VitienActivity;
+import com.example.vision_app.DAO.UserDao;
+import com.example.vision_app.LoginActivity;
+import com.example.vision_app.R;
+import com.example.vision_app.VitienActivity;
 
 public class Person extends Fragment {
     private RelativeLayout vitien_other,dangxuat_other;

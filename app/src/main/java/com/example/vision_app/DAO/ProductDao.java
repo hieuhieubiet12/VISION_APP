@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.DAO;
+package com.example.vision_app.DAO;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,11 +7,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.vision_app.Helper.DBhelper;
+import com.example.vision_app.Model.Product;
+
 import java.util.ArrayList;
-
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Helper.DBhelper;
-import thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Model.Product;
-
 
 public class ProductDao {
     private SQLiteDatabase db;
@@ -32,6 +31,7 @@ public class ProductDao {
             cursor.moveToFirst();
             do{
                 Product obj = new Product();
+                obj.setId(cursor.getInt(cursor.getColumnIndex("id_product")));
                 obj.setIdType(cursor.getInt(cursor.getColumnIndex("id_typeProduct")));
                 obj.setName(cursor.getString(cursor.getColumnIndex("name_product")));
                 obj.setPrice(cursor.getDouble(cursor.getColumnIndex("price")));
@@ -50,6 +50,18 @@ public class ProductDao {
         ArrayList<Product> list = get(sqlGetAll,null);
         return list;
     }
+    public ArrayList<Product> getAllProductById(int id){
+        String sqlGetAll = "select * from product where id_typeProduct=?";
+        ArrayList<Product> list = get(sqlGetAll,new String[]{String.valueOf(id)});
+
+        return list;
+    }
+    public int deleteProduct(int id) {
+        /*
+         * Xóa một Product khỏi cơ sở dữ liệu.
+         * */
+        return db.delete("product","id_product=?", new String[]{String.valueOf(id)});
+    }
     public long insertPro(Product product){
         ContentValues values = new ContentValues();
         values.put("id_typeProduct",product.getIdType());
@@ -62,8 +74,8 @@ public class ProductDao {
         long rowId;
         return rowId = db.insert("product",null,values);
     }
-    public Product getProductByProduct(int id_product) {
-        String getProbyId = "select * from product where id=?";
+    public Product getProductByIdProduct(int id_product) {
+        String getProbyId = "select * from product where id_product=?";
         ArrayList<Product> list = get(getProbyId, String.valueOf(id_product));
         return list.get(0);
     }
