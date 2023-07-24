@@ -1,4 +1,4 @@
-package thiennhph18697.fpt.poly.md18202_pro1121_p301_ca1_vison.Helper;
+package com.example.vision_app.Helper;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 
 public class DBhelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "CRUD_VISION";
-    public static final String TAG = "DBheleper";
     public static final int VERSION = 1;
     public DBhelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -18,15 +17,15 @@ public class DBhelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //Bảng sản phẩm.
         String TB_Product="CREATE TABLE product (\n" +
-                "  id_product INTEGER PRIMARY KEY autoincrement,\n" +
-                "  id_typeProduct INTEGER,\n" +
+                "  id_product INTEGER PRIMARY KEY autoincrement ,\n" +
+                "  id_typeProduct INTEGER references product_type(id_type_product),\n" +
                 "  name_product TEXT not null,\n" +
                 "  price double not null,\n" +
                 "  imge_product BLOB,\n" +
                 "  quantity_product INTEGER ,\n" +
                 "  status_product INTEGER default 0,\n" +
-                "  describe_product TEXT,\n" +
-                "  id_type_product integer  references product_type(id_type_product))";
+                "  in_car integer default 0,\n"+
+                "  describe_product TEXT)";
         db.execSQL(TB_Product);
 
         //Bảng loại sản phẩm.
@@ -37,6 +36,7 @@ public class DBhelper extends SQLiteOpenHelper {
 
         //Bảng người dùng (user)
         String TB_User = "create table user (user_name text primary key unique not null, " +
+                "id_location integer references id_location(location)," +
                 "name text not null, " +
                 "password text not null," +
                 "n_phone text," +
@@ -47,6 +47,10 @@ public class DBhelper extends SQLiteOpenHelper {
                 "point integer," +
                 "role integer default 1)";
         db.execSQL(TB_User);
+
+        //Bảng địa chỉ để chọn.
+        String TB_Location = "create table location (id_location integer primary key autoincrement ,district text not null, city text not null,  describe_location text not null)";
+        db.execSQL(TB_Location);
 
         //Bảng đơn hàng.
         String TB_Orders = "create table orders (id_orders  integer primary key autoincrement, " +
@@ -59,7 +63,7 @@ public class DBhelper extends SQLiteOpenHelper {
 
         //Bảng đơn hàng chi tiết của user
         String TB_Order_detail = "create table order_detail (id_order_detail integer primary key autoincrement, " +
-                "id_product integer not null references product(id_product), " +
+                "id_cart integer not null references cartProduct(id_cart), " +
                 "id_orders  integer not null references orders(id_orders)," +
                 "id_voucher integer not null references voucher(id_voucher)," +
                 "id_voucher_user integer not null references voucher_user(id_voucher_user)," +
@@ -107,6 +111,10 @@ public class DBhelper extends SQLiteOpenHelper {
                 "comment text," +
                 "point_assess integer)";
         db.execSQL(TB_Assess);
+        //Bảng giỏ hàng.
+        String TB_Cart_Pro = "create table cartProduct(id_cart integer primary key autoincrement, " +
+                "id_product INTEGER references id_product(product))";
+        db.execSQL(TB_Cart_Pro);
 
         String INSERT_ADMIN = ("insert into user(user_name,name,password,role) values ('admin','Admin','123456',0)");
         db.execSQL(INSERT_ADMIN);
