@@ -62,7 +62,7 @@ public class WithdrawAdapter extends RecyclerView.Adapter<WithdrawAdapter.Withdr
         }
              holder.timeRut.setText(withdraw.getDate_withdraw());
             if(role == 0){
-                holder.motaRut.setText(withdraw.getDescribe_withdraw());
+                holder.motaRut.setText(withdraw.getUser_name());
             }else {
                 holder.motaRut.setText(userName);
             }

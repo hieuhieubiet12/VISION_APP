@@ -62,7 +62,7 @@ public class RechargeAdapter extends RecyclerView.Adapter<RechargeAdapter.Rechar
         }
         holder.time.setText(recharge.getDate_recharge());
         if(role == 0){
-            holder.mota.setText(recharge.getDescribe_recharge());
+            holder.mota.setText(recharge.getUser_name());
         }else {
             holder.mota.setText(userName);
         }
