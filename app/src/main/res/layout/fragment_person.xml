@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/grey"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/img_toolbar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/avatar_thongtin_canhan"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tv_name_person"
+                android:layout_toRightOf="@+id/img_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/mali"
+                android:text="Chào, Tấn Linh!"/>
+
+
+            <ImageView
+                android:id="@+id/btn_giohang_person"
+                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/trolley"/>
+            <ImageView
+                android:id="@+id/btn_cdtk_person"
+                android:layout_toLeftOf="@id/btn_giohang_person"
+                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/edit"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_tienich"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F3F3F3"
+            android:layout_below="@id/rl_toolbar"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+                android:id="@+id/tv_tienich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiện ích của tôi"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="12dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/tv_tienich">
+
+
+                <RelativeLayout
+                    android:id="@+id/ln_icon_tienich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:id="@+id/img_coupouns"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/coupons"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phiếu giảm giá"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/img_coupouns"
+                        tools:ignore="TextSizeCheck" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/item_vitien_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/ln_icon_tienich"
+                    >
+                    <ImageView
+                        android:id="@+id/img_wallet"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/wallet"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ví tiền của bạn"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:layout_below="@id/img_wallet"
+                        android:layout_marginTop="5dp"
+                        tools:ignore="TextSizeCheck" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_donhang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F3F3F3"
+            android:layout_below="@id/rl_tienich"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:id="@+id/tv_donhang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đơn hàng của tôi"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="12dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/tv_donhang">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_icon_donhang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:id="@+id/img_pay"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/pay"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chờ thanh toán"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/img_pay"
+                        tools:ignore="TextSizeCheck" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/item_contract_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/rl_icon_donhang"
+                    >
+                    <ImageView
+                        android:id="@+id/img_contract"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/contract"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đã hủy"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:layout_below="@id/img_contract"
+                        android:layout_marginTop="5dp"
+
+                        tools:ignore="TextSizeCheck" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+</ScrollView>

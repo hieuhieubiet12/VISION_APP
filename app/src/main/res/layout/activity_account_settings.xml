@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:id="@+id/imgTitle_cdtk"
+        android:layout_width="wrap_content"
+        android:layout_height="275dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-100dp"
+        android:src="@drawable/bg_chitiet" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/img_exit_cdtk"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/baseline_arrow_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cài đặt tài khoản"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_cdtk_tkct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản của tôi"
+        android:layout_below="@+id/imgTitle_cdtk"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="15dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_cdtk_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_cdtk_tkct"
+        android:background="@drawable/custom_button"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin cá nhân"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_ttcn_cdtk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_cdtk_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_cdtk_1"
+        android:background="@drawable/custom_button"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ nhận hàng"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_dcnh_cdtk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cdtk_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_cdtk_2"
+        android:background="@drawable/custom_button"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cập nhật mật khẩu"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_cntk_cdtk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_cdtk_htkh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hỗ trợ khách hàng"
+        android:layout_below="@+id/rl_cdtk_3"
+        android:layout_marginTop="25dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="15dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_cdtk_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_cdtk_htkh"
+        android:background="@drawable/custom_button"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điều khoản của Vision"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_dkcv_cdtk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cdtk_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_cdtk_4"
+        android:background="@drawable/custom_button"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giới thiệu về Vision"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_gtvvs_cdtk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cdtk_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_cdtk_5"
+        android:background="@drawable/custom_button"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yêu cầu xóa tài khoản"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_ycxtk_cdtk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_dangxuat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Đăng xuất"
+        android:layout_below="@+id/rl_cdtk_6"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#035E05"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="10dp"
+        />
+
+
+</RelativeLayout>
